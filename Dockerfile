@@ -1,9 +1,12 @@
-FROM alpine:3.15.0
+FROM bitnami/minideb:latest
 
 USER root
 
-# Needed for hledger.
-RUN apk add ncurses-terminfo
+# Set locale. Needed for hledger.
+ENV LC_ALL C.UTF-8
+
+# Install tools.
+RUN apt update -y && apt install wget unzip -y
 
 # Download hledger
 RUN cd /tmp && \
@@ -25,3 +28,6 @@ RUN cd /tmp && \
     mv hledger-flow /usr/bin/ && \
     cd ../ && \
     rm -rf hledger-flow_Linux_x86_64_v0.15.0_2b025fe hledger-flow_Linux_x86_64_v0.15.0_2b025fe.tar.gz
+
+# Remove unwanted tools.
+RUN apt remove wget unzip -y && apt autoremove -y && apt autoclean -y
