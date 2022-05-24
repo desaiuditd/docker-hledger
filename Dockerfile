@@ -31,3 +31,6 @@ RUN cd /tmp && \
 
 # Remove unwanted tools.
 RUN apt remove wget unzip -y && apt autoremove -y && apt autoclean -y
+
+# Set ledger journal file. Consumers will have to put their ledger journal files at this location.
+RUN echo "include /ledger/all-years.journal" > /root/.hledger.journal
