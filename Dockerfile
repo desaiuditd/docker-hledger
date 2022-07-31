@@ -1,4 +1,6 @@
-FROM bitnami/minideb:latest
+ARG TARGETARCH
+
+FROM --platform=$TARGETARCH bitnami/minideb:latest
 
 USER root
 
