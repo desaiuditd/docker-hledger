@@ -1,6 +1,4 @@
-ARG TARGETPLATFORM
-
-FROM --platform=$TARGETPLATFORM bitnami/minideb:latest
+FROM --platform=linux/arm64 bitnami/minideb:latest
 
 USER root
 
