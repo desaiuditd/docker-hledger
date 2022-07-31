@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 bitnami/minideb:latest
+FROM bitnami/minideb:latest
 
 USER root
 
