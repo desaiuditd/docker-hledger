@@ -10,7 +10,7 @@ RUN apt update -y && apt install wget unzip -y
 
 # Download hledger
 RUN cd /tmp && \
-    wget https://github.com/simonmichael/hledger/releases/download/1.25/hledger-linux-x64.zip && \
+    wget https://github.com/simonmichael/hledger/releases/download/1.26.1/hledger-linux-x64.zip && \
     unzip hledger-linux-x64.zip && \
     mv hledger-linux-x64 hledger && \
     chmod +x hledger && \
