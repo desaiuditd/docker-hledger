@@ -12,11 +12,11 @@ RUN apt update -y && apt install wget unzip -y
 RUN cd /tmp && \
     wget https://github.com/simonmichael/hledger/releases/download/1.27.1/hledger-linux-x64.zip && \
     unzip hledger-linux-x64.zip && \
-    mv hledger-linux-x64 hledger && \
+    tar -xf hledger-linux-x64.tar && \
     chmod +x hledger && \
     chown -R root:root hledger && \
     mv hledger /usr/bin/ && \
-    rm -rf hledger-linux-x64.zip hledger-ui-linux-x64 hledger-web-linux-x64
+    rm -rf hledger-linux-x64.zip hledger-linux-x64.tar hledger-ui hledger-web
 
 # Download hledger-flow.
 RUN cd /tmp && \
