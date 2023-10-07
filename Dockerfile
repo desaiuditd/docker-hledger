@@ -6,7 +6,13 @@ USER root
 ENV LC_ALL C.UTF-8
 
 # Install tools.
-RUN apt update -y && apt install wget unzip -y
+RUN apt update -y && \
+    apt install \
+    # Needed for paging bash output.
+    less \
+    # Needed for installations. Will be removed later on.
+    wget unzip \
+    -y
 
 # Download hledger
 RUN cd /tmp && \
