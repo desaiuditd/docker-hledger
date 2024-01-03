@@ -22,7 +22,9 @@ RUN cd /tmp && \
     chmod +x hledger && \
     chown -R root:root hledger && \
     mv hledger /usr/bin/ && \
-    rm -rf hledger-linux-x64.zip hledger-linux-x64.tar hledger-ui
+    mv hledger-web /usr/bin/ && \
+    mv hledger-ui /usr/bin/ && \
+    rm -rf hledger-linux-x64.zip hledger-linux-x64.tar
 
 # Download hledger-flow.
 RUN cd /tmp && \
