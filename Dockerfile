@@ -16,13 +16,13 @@ RUN apt update -y && \
 
 # Download hledger
 RUN cd /tmp && \
-    wget https://github.com/simonmichael/hledger/releases/download/1.31/hledger-linux-x64.zip && \
+    wget https://github.com/simonmichael/hledger/releases/download/1.32.2/hledger-linux-x64.zip && \
     unzip hledger-linux-x64.zip && \
     tar -xf hledger-linux-x64.tar && \
     chmod +x hledger && \
     chown -R root:root hledger && \
     mv hledger /usr/bin/ && \
-    rm -rf hledger-linux-x64.zip hledger-linux-x64.tar hledger-ui hledger-web
+    rm -rf hledger-linux-x64.zip hledger-linux-x64.tar hledger-ui
 
 # Download hledger-flow.
 RUN cd /tmp && \
